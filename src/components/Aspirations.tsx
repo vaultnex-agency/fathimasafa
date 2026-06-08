@@ -157,6 +157,65 @@ export default function Aspirations() {
             </motion.div>
           </div>
         </AnimatedSection>
+
+        {/* Main Aspiration Statement */}
+        <AnimatedSection delay={0.3}>
+          <div className="max-w-4xl mx-auto mt-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative bg-gradient-to-br from-primary-lighter/40 via-transparent to-purple-100/30 rounded-3xl border border-primary/20 p-10 lg:p-14 shadow-xl shadow-primary/10"
+            >
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-primary-lighter/20 blur-3xl -z-10" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-purple-200/20 blur-3xl -z-10" />
+
+              <div className="relative">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary/20">
+                    <Sparkles className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-text mb-2">
+                      My <span className="gradient-text">Aspiration</span>
+                    </h3>
+                    <p className="text-sm text-text-muted">A commitment to excellence and impact</p>
+                  </div>
+                </div>
+
+                <p className="text-lg text-text-secondary leading-relaxed">
+                  I aspire to build a distinguished career in Statistics and Data Analytics while fostering excellence in education through effective English communication training. My goal is to contribute to academic research, mentor students toward their professional success, and continuously embrace innovative teaching methodologies that inspire lifelong learning and critical thinking.
+                </p>
+
+                {/* Key aspirations list */}
+                <div className="grid sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-primary/10">
+                  {[
+                    "Distinguished career in Statistics & Data Analytics",
+                    "Excellence in English communication education",
+                    "Contribution to academic research",
+                    "Mentoring students to professional success",
+                    "Innovative teaching methodologies",
+                    "Inspiring lifelong learning & critical thinking"
+                  ].map((aspiration, index) => (
+                    <motion.div
+                      key={aspiration}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.4 + index * 0.08 }}
+                      className="flex items-center gap-3"
+                    >
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-purple-500" />
+                      <span className="text-sm text-text font-medium">{aspiration}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
