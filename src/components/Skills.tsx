@@ -20,12 +20,12 @@ const skillCategories = [
     title: "Technical Skills",
     color: "bg-blue-500",
     skills: [
-      "Microsoft Office Suite",
-      "Google Workspace",
-      "Educational Technology",
-      "Data Analysis",
-      "Statistical Software",
-      "Digital Content Creation",
+      "Microsoft Word",
+      "Microsoft Excel",
+      "Microsoft PowerPoint",
+      "R Programming",
+      "SQL",
+      "DBMS",
     ],
   },
   {

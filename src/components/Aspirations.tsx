@@ -131,7 +131,7 @@ export default function Aspirations() {
                               style={{
                                 color:
                                   sectionIndex === 0
-                                    ? "#166534"
+                                     ? "#1e3a8a"
                                     : sectionIndex === 1
                                     ? "#a855f7"
                                     : "#f59e0b",

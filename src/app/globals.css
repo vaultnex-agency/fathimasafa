@@ -2,15 +2,15 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #111827;
-  --primary: #166534;
-  --primary-light: #22C55E;
-  --primary-lighter: #DCFCE7;
-  --surface: #F8FAFC;
-  --text: #111827;
-  --text-secondary: #4B5563;
-  --text-muted: #6B7280;
-  --border: #E5E7EB;
+  --foreground: #0f172a;
+  --primary: #1e3a8a;
+  --primary-light: #3b82f6;
+  --primary-lighter: #dbeafe;
+  --surface: #f8fafc;
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
 }
 
 @theme inline {
