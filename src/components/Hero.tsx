@@ -53,7 +53,7 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center will-change-contents">
           {/* Left Content */}
           <div className="space-y-8">
             <motion.div
@@ -132,7 +132,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative hidden lg:block"
+            className="relative hidden lg:block will-change-transform"
           >
             {/* Professional Photo */}
             <div className="relative w-80 h-80 mx-auto">
@@ -140,7 +140,7 @@ export default function Hero() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute -inset-3 rounded-full"
+                className="absolute -inset-3 rounded-full will-change-transform"
                 style={{
                   background:
                     "conic-gradient(from 0deg, #1e3a8a, #3b82f6, #1e3a8a)",
@@ -175,7 +175,7 @@ export default function Hero() {
               return (
                 <motion.div
                   key={card.label}
-                  className={`absolute ${positions[index]} z-10`}
+                  className={`absolute ${positions[index]} z-10 will-change-transform`}
                   animate={{
                     y: [0, -15, 0],
                     rotate: [0, index % 2 === 0 ? 2 : -2, 0],
