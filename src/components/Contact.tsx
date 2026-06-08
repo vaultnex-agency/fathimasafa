@@ -23,6 +23,12 @@ const contactInfo = [
     href: "tel:+917736984029",
   },
   {
+    icon: Phone,
+    label: "Phone (UAE)",
+    value: "+971 54 732 9143",
+    href: "tel:+971547329143",
+  },
+  {
     icon: Mail,
     label: "Email",
     value: "fathima.safa17@yahoo.com",
@@ -33,6 +39,12 @@ const contactInfo = [
     label: "Location",
     value: "Anchikatte, Manjeshwar, Kasaragod, Kerala, India",
     href: null,
+  },
+  {
+    icon: ExternalLink,
+    label: "WhatsApp",
+    value: "+91 7736984029",
+    href: "https://wa.me/917736984029",
   },
   {
     icon: ExternalLink,
@@ -52,21 +64,46 @@ export default function Contact() {
     e.preventDefault();
     if (!formRef.current) return;
 
+    const formData = new FormData(formRef.current);
+    const name = formData.get("user_name") as string;
+    const email = formData.get("user_email") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
+
     setStatus("loading");
 
-    try {
-      // Replace these with your actual EmailJS credentials
-      await emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        formRef.current,
-        "YOUR_PUBLIC_KEY"
-      );
+    // Create message for WhatsApp
+    const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0A%0AMessage:%0A${message}`;
+    const whatsappURL = `https://wa.me/917736984029?text=${whatsappMessage}`;
+
+    // Try to send via EmailJS if credentials are configured
+    if (
+      "YOUR_SERVICE_ID" !== "YOUR_SERVICE_ID" &&
+      "YOUR_TEMPLATE_ID" !== "YOUR_TEMPLATE_ID" &&
+      "YOUR_PUBLIC_KEY" !== "YOUR_PUBLIC_KEY"
+    ) {
+      try {
+        await emailjs.sendForm(
+          "YOUR_SERVICE_ID",
+          "YOUR_TEMPLATE_ID",
+          formRef.current,
+          "YOUR_PUBLIC_KEY"
+        );
+        setStatus("success");
+        formRef.current.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      } catch {
+        // If email fails, redirect to WhatsApp
+        window.open(whatsappURL, "_blank");
+        setStatus("success");
+        formRef.current.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } else {
+      // Open WhatsApp with pre-filled message
+      window.open(whatsappURL, "_blank");
       setStatus("success");
       formRef.current.reset();
-      setTimeout(() => setStatus("idle"), 5000);
-    } catch {
-      setStatus("error");
       setTimeout(() => setStatus("idle"), 5000);
     }
   };
