@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Download,
@@ -133,21 +134,34 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative hidden lg:block"
           >
-            {/* Professional Photo Placeholder */}
+            {/* Professional Photo */}
             <div className="relative w-80 h-80 mx-auto">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary to-primary-light rotate-6 opacity-20" />
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-lighter to-white border border-primary/10 overflow-hidden">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-primary/60">
-                  <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <span className="text-4xl font-[family-name:var(--font-outfit)] font-bold text-primary/40">
-                      FS
-                    </span>
-                  </div>
-                  <p className="text-sm font-medium text-primary/40">
-                    Professional Photo
-                  </p>
-                </div>
+              {/* Rotating green ring behind */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute -inset-3 rounded-full"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, #166534, #22C55E, #166534)",
+                  opacity: 0.15,
+                }}
+              />
+              {/* Static outer green ring */}
+              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-primary to-primary-light opacity-20" />
+              {/* Photo frame */}
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-primary/20">
+                <Image
+                  src="/profile.jpg"
+                  alt="Fathima Safa – Professional Photo"
+                  fill
+                  sizes="320px"
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
+              {/* Green status dot */}
+              <div className="absolute bottom-4 right-4 w-5 h-5 rounded-full bg-primary-light border-2 border-white shadow-lg" />
             </div>
 
             {/* Floating Cards */}
