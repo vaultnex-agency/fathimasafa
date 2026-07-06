@@ -20,7 +20,7 @@ const educationItems = [
   },
   {
     degree: "M.Sc. Statistics",
-    institution: "Master of Science",
+    institution: "Master of Science, Govinda Pai Memorial Government College Manjeshwar, Kannur University",
     score: "84%",
     icon: TrendingUp,
     gradient: "from-blue-500 to-cyan-400",
@@ -29,7 +29,7 @@ const educationItems = [
   },
   {
     degree: "B.Sc. Statistics",
-    institution: "Bachelor of Science",
+    institution: "Bachelor of Science, Govinda Pai Memorial Government College Manjeshwar, Kannur University",
     score: "90.19%",
     icon: Award,
     gradient: "from-amber-500 to-orange-400",

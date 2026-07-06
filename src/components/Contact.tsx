@@ -201,6 +201,7 @@ export default function Contact() {
                     id="user_name"
                     name="user_name"
                     required
+                    suppressHydrationWarning
                     className="w-full px-4 py-3 rounded-xl bg-white border border-border/50 text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300"
                     placeholder="John Doe"
                   />
@@ -217,6 +218,7 @@ export default function Contact() {
                     id="user_email"
                     name="user_email"
                     required
+                    suppressHydrationWarning
                     className="w-full px-4 py-3 rounded-xl bg-white border border-border/50 text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300"
                     placeholder="john@example.com"
                   />
@@ -235,6 +237,7 @@ export default function Contact() {
                   id="subject"
                   name="subject"
                   required
+                  suppressHydrationWarning
                   className="w-full px-4 py-3 rounded-xl bg-white border border-border/50 text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300"
                   placeholder="Teaching Collaboration"
                 />
@@ -251,6 +254,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   required
+                  suppressHydrationWarning
                   rows={5}
                   className="w-full px-4 py-3 rounded-xl bg-white border border-border/50 text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 resize-none"
                   placeholder="Your message here..."
@@ -259,6 +263,7 @@ export default function Contact() {
 
               <motion.button
                 type="submit"
+                suppressHydrationWarning
                 disabled={status === "loading"}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
